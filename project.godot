@@ -1,0 +1,43 @@
+; Engine configuration file.
+; Best edited using the Godot editor.
+
+config_version=5
+
+[application]
+
+config/name="Daniels Game"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"device":-1,"keycode":65)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"device":-1,"keycode":68)]
+}
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"device":-1,"keycode":87)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"device":-1,"keycode":83)]
+}
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/canvas_textures/default_texture_filter=0

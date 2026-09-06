@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://danielplayer0001"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_player_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_player_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_player")
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0.313726, 0.890196, 0.760784, 1)
+polygon = PackedVector2Array(0, -56, 48, -24, 48, 36, 0, 56, -48, 36, -48, -24)

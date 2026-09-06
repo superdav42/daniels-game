@@ -1,0 +1,18 @@
+# Godot imports/cache
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+
+# Builds
+build/
+exports/
+*.apk
+*.aab
+*.ipa
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
