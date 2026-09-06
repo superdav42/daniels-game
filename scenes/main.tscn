@@ -6,27 +6,184 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main_script")
 
-[node name="Background" type="ColorRect" parent="."]
-offsets_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 720.0
-offset_bottom = 1280.0
-color = Color(0.0862745, 0.0941176, 0.14902, 1)
-
 [node name="Player" parent="." instance=ExtResource("2_player_scene")]
-position = Vector2(360, 960)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(360, 640)
-enabled = true
+position = Vector2(360, 965)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
-[node name="ScoreLabel" type="Label" parent="Hud"]
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 360.0
-offset_bottom = 96.0
-theme_override_font_sizes/font_size = 38
-text = "Score: 0"
+[node name="TopShade" type="ColorRect" parent="Hud"]
+offset_right = 720.0
+offset_bottom = 160.0
+mouse_filter = 2
+color = Color(0.018, 0.027, 0.045, 0.82)
+
+[node name="EventLabel" type="Label" parent="Hud"]
+offset_left = 26.0
+offset_top = 22.0
+offset_right = 420.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.28, 0.84, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "APEX FESTIVAL  •  COAST RUN"
+
+[node name="PositionLabel" type="Label" parent="Hud"]
+offset_left = 26.0
+offset_top = 51.0
+offset_right = 260.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 0.84, 0.16, 1)
+theme_override_font_sizes/font_size = 42
+text = "P6 / 6"
+
+[node name="TimeLabel" type="Label" parent="Hud"]
+offset_left = 481.0
+offset_top = 48.0
+offset_right = 692.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 30
+text = "00:00.00"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Hud"]
+offset_left = 26.0
+offset_top = 126.0
+offset_right = 694.0
+offset_bottom = 136.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="DistanceLabel" type="Label" parent="Hud"]
+offset_left = 512.0
+offset_top = 101.0
+offset_right = 694.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.72, 0.78, 0.84, 1)
+theme_override_font_sizes/font_size = 16
+text = "3.2 KM"
+horizontal_alignment = 2
+
+[node name="SpeedLabel" type="Label" parent="Hud"]
+offset_left = 250.0
+offset_top = 1040.0
+offset_right = 470.0
+offset_bottom = 1130.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.75)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 72
+text = "000"
+horizontal_alignment = 1
+
+[node name="SpeedUnit" type="Label" parent="Hud"]
+offset_left = 302.0
+offset_top = 1124.0
+offset_right = 418.0
+offset_bottom = 1154.0
+theme_override_colors/font_color = Color(0.65, 0.75, 0.82, 1)
+theme_override_font_sizes/font_size = 18
+text = "KM/H"
+horizontal_alignment = 1
+
+[node name="NitroLabel" type="Label" parent="Hud"]
+offset_left = 250.0
+offset_top = 1170.0
+offset_right = 470.0
+offset_bottom = 1194.0
+theme_override_colors/font_color = Color(1, 0.84, 0.16, 1)
+theme_override_font_sizes/font_size = 16
+text = "NITRO"
+horizontal_alignment = 1
+
+[node name="NitroBar" type="ProgressBar" parent="Hud"]
+offset_left = 250.0
+offset_top = 1200.0
+offset_right = 470.0
+offset_bottom = 1214.0
+mouse_filter = 2
+value = 100.0
+show_percentage = false
+
+[node name="CountdownLabel" type="Label" parent="Hud"]
+offset_left = 110.0
+offset_top = 410.0
+offset_right = 610.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 138
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnnouncementLabel" type="Label" parent="Hud"]
+visible = false
+offset_left = 120.0
+offset_top = 245.0
+offset_right = 600.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(1, 0.84, 0.16, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 28
+text = "CHECKPOINT\nNitro recharged"
+horizontal_alignment = 1
+
+[node name="SteeringHint" type="Label" parent="Hud"]
+offset_left = 28.0
+offset_top = 1208.0
+offset_right = 226.0
+offset_bottom = 1252.0
+theme_override_colors/font_color = Color(0.7, 0.78, 0.82, 0.72)
+theme_override_font_sizes/font_size = 15
+text = "DRAG TO STEER\nW/S THROTTLE & BRAKE"
+
+[node name="BoostButton" type="Button" parent="Hud"]
+offset_left = 563.0
+offset_top = 1110.0
+offset_right = 693.0
+offset_bottom = 1240.0
+theme_override_colors/font_color = Color(1, 0.84, 0.16, 1)
+theme_override_colors/font_pressed_color = Color(0.04, 0.06, 0.09, 1)
+theme_override_font_sizes/font_size = 20
+text = "BOOST"
+
+[node name="ResultPanel" type="Panel" parent="Hud"]
+visible = false
+offset_left = 80.0
+offset_top = 344.0
+offset_right = 640.0
+offset_bottom = 876.0
+
+[node name="ResultTitle" type="Label" parent="Hud/ResultPanel"]
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 530.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(1, 0.84, 0.16, 1)
+theme_override_font_sizes/font_size = 48
+text = "P1 FINISH"
+horizontal_alignment = 1
+
+[node name="ResultStats" type="Label" parent="Hud/ResultPanel"]
+offset_left = 35.0
+offset_top = 150.0
+offset_right = 525.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.88, 0.93, 0.97, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 24
+text = "PODIUM DRIVE\n\nTIME  00:00.00\nOVERTAKES  5"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Hud/ResultPanel"]
+offset_left = 145.0
+offset_top = 408.0
+offset_right = 415.0
+offset_bottom = 478.0
+theme_override_font_sizes/font_size = 22
+text = "RACE AGAIN"
